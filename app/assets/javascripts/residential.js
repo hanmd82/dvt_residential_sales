@@ -1,10 +1,9 @@
-$(function() {
+function makePie() {
   var width = 960,
      height = 500,
-     radius = Math.min(width, height) / 2;
-
-  var totals = {};
-  var color  = d3.scale.category20c();
+     radius = Math.min(width, height) / 2,
+     totals = {},
+     color  = d3.scale.category20c();
 
   var arc = d3.svg.arc()
                   .outerRadius(radius - 10)
@@ -51,4 +50,4 @@ $(function() {
       .style("text-anchor", "middle")
       .text(function(d) { return d.data; });
   });
-});
+}
