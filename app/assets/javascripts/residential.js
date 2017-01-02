@@ -26,7 +26,16 @@ $(function() {
     var g = svg.selectAll(".arc")
                .data(pie(d3.keys(totals)))
                .enter().append("g")
-                         .attr("class", "arc");
+                         .attr("class", "arc")
+                         .on("mouseover", function(d) {
+                          d3.select(this).select("text").style("font-weight", "bold")
+                          d3.select(this).select("text").style("font-size", "1.25em")
+                         })
+                         .on("mouseout", function(d) {
+                          d3.select(this).select("text").style("font-weight", "normal")
+                          d3.select(this).select("text").style("font-size", "1em")
+                         })
+                         ;
 
     g.append("path")
       .attr("d", arc)
