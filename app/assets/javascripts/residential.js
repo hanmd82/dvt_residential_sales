@@ -1,9 +1,9 @@
 function makePie() {
-  var width = 960,
-     height = 500,
-     radius = Math.min(width, height) / 2,
+  var width = 600,
+     height = width,
+     radius = width / 2.5,
      totals = {},
-     color  = d3.scale.category20c();
+     color  = d3.scale.category20b();
 
   var arc = d3.svg.arc()
                   .outerRadius(radius - 10)
